@@ -3,10 +3,10 @@ import { Test, TestingModule } from '@nestjs/testing';
 import * as request from 'supertest';
 import { SuperheroesModule } from './superheroes.module';
 
-describe('SuperheroesController (e2e)', () => {
+describe('SuperheroesController', () => {
   let app: INestApplication;
 
-  beforeEach(async () => {
+  beforeAll(async () => {
     const moduleFixture: TestingModule = await Test.createTestingModule({
       imports: [SuperheroesModule],
     }).compile();
@@ -15,7 +15,7 @@ describe('SuperheroesController (e2e)', () => {
     await app.init();
   });
 
-  afterEach(async () => {
+  afterAll(async () => {
     await app.close();
   });
 
@@ -24,7 +24,7 @@ describe('SuperheroesController (e2e)', () => {
       const superheroDto = {
         name: 'Thor',
         super_power: 'Lightning flash',
-        humility_score: 4
+        humility_score: 4,
       };
 
       const response = await request(app.getHttpServer())
@@ -37,9 +37,9 @@ describe('SuperheroesController (e2e)', () => {
           id: expect.any(Number),
           name: 'Thor',
           super_power: 'Lightning flash',
-          humility_score: 4
+          humility_score: 4,
         })
       );
     });
   });
-}); 
+});

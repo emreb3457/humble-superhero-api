@@ -9,7 +9,6 @@ The Humble Superhero API is a simple API where users can add superheroes and lis
 
 - **Backend:** NestJS
 - **Database:** Node Cache
-- **Testing:** Jest
 - **Frontend:** React
 
 ## Running the Project
@@ -86,7 +85,6 @@ To run the backend and frontend, follow these steps:
 
 ## Testing
 
-- **At least one endpoint has been tested using Jest.**
 - To run tests:
   ```bash
   npm run test
