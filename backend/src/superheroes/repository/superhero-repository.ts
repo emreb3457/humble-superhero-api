@@ -24,8 +24,9 @@ export class SuperheroRepository {
         const { sort_by: sortBy, sort_order: sortOrder } = query;
         const superheroes = this.cache.get<Superhero[]>(this.CACHE_KEY) || [];
 
-        if (!sortBy) return [...superheroes];
+        if (!sortBy) return superheroes; // If no sorting is provided, return all superheroes
 
+        // Create a copy of the superheroes array to avoid mutating the original
         return [...superheroes].sort((a, b) => {
             const order = sortOrder === SortOrder.DESC ? -1 : 1;
             return a[sortBy] < b[sortBy] ? -order : a[sortBy] > b[sortBy] ? order : 0;

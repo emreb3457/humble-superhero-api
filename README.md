@@ -102,6 +102,7 @@ To collaborate during development, we follow these methods:
 
 ## If I Had More Time
 
+   - I would build a better architecture
    - I would integrate with a database like PostgreSQL, MySQL, or MongoDB for permanent data storage.
    - I would add authentication and authorization so users can log in.
    - I would add custom error handling.
